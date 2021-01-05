@@ -27,18 +27,16 @@ class CarsIndex extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <Sidebar name={this.props.garageName} />
-        <div className="car-list">
-          {
-            this.props.cars.map((car) => {
-              return this.renderCar(car);
-            })
-          }
-        </div>
+    return [
+      <Sidebar key="sidebar" name={this.props.garageName} />,
+      <div key="cars" className="car-list">
+        {
+          this.props.cars.map((car) => {
+            return this.renderCar(car);
+          })
+        }
       </div>
-    );
+    ];
   }
 }
 
