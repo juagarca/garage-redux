@@ -2,8 +2,8 @@ import React from 'react';
 
 const Sidebar = (props) => {
   return (
-    <div className="">
-      <img src="" alt="" />
+    <div className="sidebar">
+      <div className="image" style={{ backgroundImage: "url('/assets/images/garage.png')" }} />
       <span><strong>{props.name} Garage</strong></span>
       <p>Best online garage</p>
     </div>
