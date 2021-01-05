@@ -11,9 +11,7 @@ class CarsNew extends Component {
   render() {
     return [
       <Sidebar key="sidebar" name={this.props.garageName}>
-        <Link to="/">
-          Back
-        </Link>
+        <Link to="/" className="btn btn-primary">Back</Link>
       </Sidebar>,
       <form>
         <input />

@@ -6,6 +6,7 @@ const Sidebar = (props) => {
       <div className="image" style={{ backgroundImage: "url('/assets/images/garage.png')" }} />
       <span><strong>{props.name} Garage</strong></span>
       <p>Best online garage</p>
+      {props.children}
     </div>
   );
 };
