@@ -1,6 +1,7 @@
 const BASE_URL = 'https://wagon-garage-api.herokuapp.com';
 
 export const FETCH_CARS = 'FETCH_CARS';
+export const CREATE_CAR = 'CREATE_CAR';
 
 export function fetchCars(garage) {
   const url = `${BASE_URL}/${garage}/cars`;

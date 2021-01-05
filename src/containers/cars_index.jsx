@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 
 import { fetchCars } from '../actions';
 import Sidebar from '../components/sidebar';
@@ -28,7 +29,11 @@ class CarsIndex extends Component {
 
   render() {
     return [
-      <Sidebar key="sidebar" name={this.props.garageName} />,
+      <Sidebar key="sidebar" name={this.props.garageName}>
+        <Link className="btn btn-primary" to="/cars/new">
+          Add a car
+        </Link>
+      </Sidebar>,
       <div key="cars" className="car-list">
         {
           this.props.cars.map((car) => {
