@@ -1,15 +1,12 @@
-.app {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
 .view-container{
   display: flex;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .sidebar {
   width: 25%;
-  height: 100vh;
+  height: 400px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 10px;
