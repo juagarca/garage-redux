@@ -7,8 +7,8 @@ import Sidebar from '../components/sidebar';
 
 
 class CarsIndex extends Component {
-  componentDidMount() {
-    this.props.fetchCars(this.props.garage);
+  componentWillMount() {
+    this.props.fetchCars(this.props.garageName);
   }
 
   renderCar = (car) => {
@@ -46,7 +46,6 @@ function mapStateToProps(state) {
   return {
     garageName: state.garageName,
     cars: state.cars,
-    garage: state.garage
   };
 }
 
