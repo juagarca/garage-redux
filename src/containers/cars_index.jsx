@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { fetchCars } from '../actions';
+import Sidebar from '../components/sidebar';
 
 
 class CarsIndex extends Component {
@@ -27,12 +28,15 @@ class CarsIndex extends Component {
 
   render() {
     return (
-      <div className="car-list">
-        {
-          this.props.cars.map((car) => {
-            return this.renderCar(car);
-          })
-        }
+      <div>
+        <Sidebar name={this.props.garageName} />
+        <div className="car-list">
+          {
+            this.props.cars.map((car) => {
+              return this.renderCar(car);
+            })
+          }
+        </div>
       </div>
     );
   }
@@ -40,6 +44,7 @@ class CarsIndex extends Component {
 
 function mapStateToProps(state) {
   return {
+    garageName: state.garageName,
     cars: state.cars,
     garage: state.garage
   };
