@@ -22,7 +22,7 @@ class CarsNew extends Component {
         <Link to="/" className="btn btn-primary">Back</Link>
       </Sidebar>,
       <div className="form-container" style={{ backgroundImage: "url('/assets/images/garage.png')" }}>
-        <div className="overlay"></div>
+        <div className="overlay" />
         <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
           <label htmlFor="InputBrand">Brand</label>
           <Field
