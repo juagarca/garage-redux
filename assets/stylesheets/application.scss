@@ -74,4 +74,26 @@
   padding: 16px;
 }
 
+// Create
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  width: 845px;
+  height: 380px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 10px 0 0 10px;
+
+  form {
+    padding-top: 35px;
+    width: 40%;
+
+    input {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+
+
 // Show
