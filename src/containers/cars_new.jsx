@@ -9,23 +9,11 @@ import { createCar } from '../actions';
 
 class CarsNew extends Component {
   onSubmit = (values) => {
-    this.props.createCar(values, (car) => {
+    console.log(values);
+    this.props.createCar(this.props.garageName, values, (car) => {
       this.props.history.push('/'); // Navigate after submit
       return car;
     });
-  }
-
-  renderField(field) {
-    return (
-      <div className="form-group">
-        <label>{field.label}</label>
-        <input
-          className="form-control"
-          type={field.type}
-          {...field.input}
-        />
-      </div>
-    );
   }
 
   render() {
@@ -34,29 +22,37 @@ class CarsNew extends Component {
         <Link to="/" className="btn btn-primary">Back</Link>
       </Sidebar>,
       <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
+        <label htmlFor="InputBrand">Brand</label>
         <Field
           label="Brand"
           name="brand"
           type="text"
-          component={this.renderField}
+          className="form-control"
+          component="input"
         />
+        <label htmlFor="InputModel">Model</label>
         <Field
+          className="form-control"
           label="Model"
           name="model"
           type="text"
-          component={this.renderField}
+          component="input"
         />
+        <label htmlFor="InputOwner">Owner</label>
         <Field
+          className="form-control"
           label="Owner"
           name="owner"
           type="text"
-          component={this.renderField}
+          component="input"
         />
+        <label htmlFor="InputPlate">Plate</label>
         <Field
+          className="form-control"
           label="Plate"
           name="plate"
           type="text"
-          component={this.renderField}
+          component="input"
         />
         <button
           className="btn btn-primary"
@@ -68,6 +64,12 @@ class CarsNew extends Component {
   }
 }
 
-export default reduxForm({ form: 'newPostForm' })(
-  connect(null, { createCar })(CarsNew)
+function mapStateToProps(state) {
+  return {
+    garageName: state.garageName
+  };
+}
+
+export default reduxForm({ form: 'newCarForm' })(
+  connect(mapStateToProps, { createCar })(CarsNew)
 );
