@@ -28,19 +28,11 @@ class CarShow extends Component {
   // }
 
   render() {
-    // return [
-    //   <Sidebar key="sidebar" name={this.props.garageName}>
-    //     <Link to="/" className="btn btn-primary">Back</Link>
-    //   </Sidebar>,
-    //   <div key="cars" className="car-list">
-    //     {
-    //       this.props.cars.map((car) => {
-    //         return this.renderCar(car);
-    //       })
-    //     }
-    //   </div>
-    // ];
-    return null;
+    return [
+      <Sidebar key="sidebar" name={this.props.garageName}>
+        <Link to="/" className="btn btn-primary">Back</Link>
+      </Sidebar>
+    ];
   }
 }
 
