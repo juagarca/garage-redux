@@ -8,32 +8,39 @@ import { showCar } from '../actions';
 
 
 class CarShow extends Component {
-  componentDidMount() {
-    console.log(this.props.match.params.id);
-    this.props.showCar(this.props.match.params.id);
-  }
+  // componentDidMount() {
+  //   this.props.showCar(this.props.car.id);
+  // }
 
-  renderCar = (car) => {
-    return (
-      <div
-        className="card-product"
-        key={car.id}
-      >
-        <img src="../../assets/images/car.png" alt="car logo" />
-        <div className="card-product-infos">
-          <h2><strong>{car.brand} - {car.model}</strong></h2>
-          <p><strong>Owner:</strong> {car.owner}</p>
-        </div>
-      </div>
-    );
-  }
+  // renderCar = (car) => {
+  //   return (
+  //     <div
+  //       className="card-product"
+  //       key={car.id}
+  //     >
+  //       <img src="../../assets/images/car.png" alt="car logo" />
+  //       <div className="card-product-infos">
+  //         <h2><strong>{car.brand} - {car.model}</strong></h2>
+  //         <p><strong>Owner:</strong> {car.owner}</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   render() {
-    return [
-      <Sidebar key="sidebar" name={this.props.garageName}>
-        <Link to="/" className="btn btn-primary">Back</Link>
-      </Sidebar>
-    ];
+    // return [
+    //   <Sidebar key="sidebar" name={this.props.garageName}>
+    //     <Link to="/" className="btn btn-primary">Back</Link>
+    //   </Sidebar>,
+    //   <div key="cars" className="car-list">
+    //     {
+    //       this.props.cars.map((car) => {
+    //         return this.renderCar(car);
+    //       })
+    //     }
+    //   </div>
+    // ];
+    return null;
   }
 }
 
@@ -43,12 +50,19 @@ class CarShow extends Component {
 //   };
 // }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      showCar: showCar,
-    }, dispatch);
-}
+// function mapDispatchToProps(dispatch) {
+//   return bindActionCreators(
+//     {
+//       showCar: showCar,
+//     }, dispatch);
+// }
 
-export default connect(null, mapDispatchToProps)(CarShow);
+// function mapStateToProps(state, ownProps) {
+//   const idFromUrl = parseInt(ownProps.match.params.id, 10);
+//   const car = state.cars.find(c => c.id === idFromUrl);
+//   return { car };
+// }
+
+
+export default CarShow;
 

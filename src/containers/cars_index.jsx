@@ -14,16 +14,15 @@ class CarsIndex extends Component {
 
   renderCar = (car) => {
     return (
-      <div
-        className="card-product"
-        key={car.id}
-      >
-        <img src="../../assets/images/car.png" alt="car logo" />
-        <div className="card-product-infos">
-          <h2><strong>{car.brand} - {car.model}</strong></h2>
-          <p><strong>Owner:</strong> {car.owner}</p>
+      <Link to={`/cars/${car.id}`} key={car.id}>
+        <div className="card-product">
+          <img src="../../assets/images/car.png" alt="car logo" />
+          <div className="card-product-infos">
+            <h2><strong>{car.brand} - {car.model}</strong></h2>
+            <p><strong>Owner:</strong> {car.owner}</p>
+          </div>
         </div>
-      </div>
+      </Link>
     );
   }
 
