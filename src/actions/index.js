@@ -11,3 +11,20 @@ export function fetchCars(garage) {
     payload: promise
   };
 }
+
+export function createCar(garage, carData, callback) {
+  const url = `${BASE_URL}/${garage}/cars`;
+  const promise = fetch(url, {
+    method: "POST",
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(carData)
+  }).then(response => response.json())
+    .then(callback);
+  return {
+    type: CREATE_CAR, // Not used by reducer (we navigate)
+    payload: promise
+  };
+}
