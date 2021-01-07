@@ -18,7 +18,7 @@ class CarsNew extends Component {
 
   render() {
     return [
-      <Sidebar key="sidebar" name={this.props.garageName}>
+      <Sidebar key="sidebar" garageName={this.props.garageName}>
         <Link to="/" className="btn btn-primary">Back</Link>
       </Sidebar>,
       <div className="form-container" style={{ backgroundImage: "url('/assets/images/garage.png')" }}>

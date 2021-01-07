@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 
 import Sidebar from '../components/sidebar';
-import { showCar } from '../actions';
 
 
 class CarShow extends Component {
@@ -29,18 +27,18 @@ class CarShow extends Component {
 
   render() {
     return [
-      <Sidebar key="sidebar" name={this.props.garageName}>
+      <Sidebar key="sidebar" garageName={this.props.garageName}>
         <Link to="/" className="btn btn-primary">Back</Link>
       </Sidebar>
     ];
   }
 }
 
-// function mapStateToProps(state) {
-//   return {
-//     cars: state.cars,
-//   };
-// }
+function mapStateToProps(state) {
+  return {
+    garageName: state.garageName,
+  };
+}
 
 // function mapDispatchToProps(dispatch) {
 //   return bindActionCreators(
@@ -56,5 +54,5 @@ class CarShow extends Component {
 // }
 
 
-export default CarShow;
+export default connect(mapStateToProps, null)(CarShow);
 

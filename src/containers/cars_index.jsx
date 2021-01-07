@@ -28,7 +28,7 @@ class CarsIndex extends Component {
 
   render() {
     return [
-      <Sidebar key="sidebar" garage={this.props.garage}>
+      <Sidebar key="sidebar" garageName={this.props.garageName}>
         <Link to="/cars/new" className="btn btn-primary">Add a car</Link>
       </Sidebar>,
       <div key="cars" className="car-list">
