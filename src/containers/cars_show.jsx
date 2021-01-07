@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
 
 import Sidebar from '../components/sidebar';
+import { fetchCar } from '../actions';
 
-
-class CarShow extends Component {
-  // componentDidMount() {
-  //   this.props.showCar(this.props.car.id);
-  // }
+class CarsShow extends Component {
+  componentDidMount() {
+    if (!this.props.car) {
+      this.props.fetchCar(this.props.match.params.id);
+    }
+  }
 
   renderCar = (car) => {
     return (
@@ -52,5 +55,5 @@ function mapDispatchToProps(dispatch) {
     }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CarShow);
+export default connect(mapStateToProps, mapDispatchToProps)(CarsShow);
 
