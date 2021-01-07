@@ -31,7 +31,7 @@ export function createCar(garage, carData, callback) {
   };
 }
 
-export function showCar(id) {
+export function fetchCar(id) {
   const url = `${BASE_URL}/cars/${id}`;
   const promise = fetch(url).then(response => response.json());
   return {

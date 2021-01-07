@@ -10,26 +10,35 @@ class CarShow extends Component {
   //   this.props.showCar(this.props.car.id);
   // }
 
-  // renderCar = (car) => {
-  //   return (
-  //     <div
-  //       className="card-product"
-  //       key={car.id}
-  //     >
-  //       <img src="../../assets/images/car.png" alt="car logo" />
-  //       <div className="card-product-infos">
-  //         <h2><strong>{car.brand} - {car.model}</strong></h2>
-  //         <p><strong>Owner:</strong> {car.owner}</p>
-  //       </div>
-  //     </div>
-  //   );
-  // }
+  renderCar = (car) => {
+    return (
+      <div className="card-trip">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <div>
+            <h2>{car.brand}</h2>
+            <p>{car.model}</p>
+          </div>
+          <h2 class="card-trip-pricing">{car.owner}</h2>
+          <span>{car.plate}</span>
+        </div>
+      </div>
+    );
+  }
 
   render() {
     return [
       <Sidebar key="sidebar" garageName={this.props.garageName}>
         <Link to="/" className="btn btn-primary">Back</Link>
-      </Sidebar>
+      </Sidebar>,
+      <div className="car-list">
+        {
+          this.props.cars.map((car) => {
+            return this.renderCar(car);
+          })
+        }
+      </div>
+
     ];
   }
 }
