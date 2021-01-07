@@ -13,13 +13,13 @@ class CarShow extends Component {
   renderCar = (car) => {
     return (
       <div className="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-trip-infos">
+        <img src="../../assets/images/car.png" alt="car logo" />
+        <div className="card-trip-infos">
           <div>
             <h2>{car.brand}</h2>
             <p>{car.model}</p>
           </div>
-          <h2 class="card-trip-pricing">{car.owner}</h2>
+          <h2 className="card-trip-pricing">{car.owner}</h2>
           <span>{car.plate}</span>
         </div>
       </div>
@@ -31,36 +31,19 @@ class CarShow extends Component {
       <Sidebar key="sidebar" garageName={this.props.garageName}>
         <Link to="/" className="btn btn-primary">Back</Link>
       </Sidebar>,
-      <div className="car-list">
-        {
-          this.props.cars.map((car) => {
-            return this.renderCar(car);
-          })
-        }
-      </div>
-
+      <div key={this.props.car.id}>{this.renderCar(this.props.car)}</div>
     ];
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
+  const idFromUrl = parseInt(ownProps.match.params.id, 10);
+  const car = state.cars.find(c => c.id === idFromUrl);
   return {
-    garageName: state.garageName,
+    car: car,
+    garageName: state.garageName
   };
 }
-
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators(
-//     {
-//       showCar: showCar,
-//     }, dispatch);
-// }
-
-// function mapStateToProps(state, ownProps) {
-//   const idFromUrl = parseInt(ownProps.match.params.id, 10);
-//   const car = state.cars.find(c => c.id === idFromUrl);
-//   return { car };
-// }
 
 
 export default connect(mapStateToProps, null)(CarShow);
