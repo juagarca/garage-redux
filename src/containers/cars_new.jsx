@@ -9,7 +9,6 @@ import { createCar } from '../actions';
 
 class CarsNew extends Component {
   onSubmit = (values) => {
-    console.log(values);
     this.props.createCar(this.props.garageName, values, (car) => {
       this.props.history.push('/'); // Navigate after submit
       return car;
