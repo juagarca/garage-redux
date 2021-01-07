@@ -45,6 +45,12 @@ function mapStateToProps(state, ownProps) {
   };
 }
 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    {
+      fetchCar: fetchCar,
+    }, dispatch);
+}
 
-export default connect(mapStateToProps, null)(CarShow);
+export default connect(mapStateToProps, mapDispatchToProps)(CarShow);
 
