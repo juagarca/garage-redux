@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 
 import Sidebar from '../components/sidebar';
-import { fetchCar, deleteCar } from '../actions';
+import { fetchCar, removeCar } from '../actions';
 
 class CarsShow extends Component {
   componentDidMount() {
@@ -14,7 +14,7 @@ class CarsShow extends Component {
   }
 
   handleClick = () => {
-
+    this.props.removeCar(this.props.history, this.props.car);
   }
 
   renderCar = (car) => {
@@ -28,7 +28,7 @@ class CarsShow extends Component {
         <span className="card-owner">{car.owner}</span>
         <p className="plate-border">{car.plate}</p>
       </div>,
-      <span className="btn btn-primary" onClick={this.handleClick}>Delete</span>
+      <Link to="/" className="btn btn-primary" onClick={this.handleClick}>Delete</Link>
     ];
   }
 
@@ -55,7 +55,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
       fetchCar: fetchCar,
-      deleteCar: deleteCar
+      removeCar: removeCar
     }, dispatch);
 }
 
