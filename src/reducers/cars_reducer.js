@@ -1,7 +1,8 @@
 import { FETCH_CARS, FETCH_CAR } from '../actions';
 
 
-export default function(state = null, action) {
+export default function(state = [], action) {
+  // debugger
   switch (action.type) {
     case FETCH_CARS:
       return action.payload;

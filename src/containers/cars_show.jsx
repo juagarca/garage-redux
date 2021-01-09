@@ -7,7 +7,7 @@ import Sidebar from '../components/sidebar';
 import { fetchCar } from '../actions';
 
 class CarsShow extends Component {
-  componentWillMount() {
+  componentDidMount() {
     if (!this.props.car) {
       this.props.fetchCar(this.props.match.params.id);
     }
@@ -30,6 +30,9 @@ class CarsShow extends Component {
   }
 
   render() {
+    if (!this.props.car) {
+      return <p>Loading...</p>;
+    }
     return [
       <Sidebar key="sidebar" garageName={this.props.car.garage}>
         <Link to="/" className="btn btn-primary">Back</Link>
@@ -42,9 +45,7 @@ class CarsShow extends Component {
 function mapStateToProps(state, ownProps) {
   const idFromUrl = parseInt(ownProps.match.params.id, 10);
   const car = state.cars.find(c => c.id === idFromUrl);
-  return {
-    car: car
-  };
+  return { car };
 }
 
 function mapDispatchToProps(dispatch) {
