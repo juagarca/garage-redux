@@ -23,7 +23,8 @@ class CarsShow extends Component {
         </div>
         <span className="card-owner">{car.owner}</span>
         <p className="plate-border">{car.plate}</p>
-      </div>
+      </div>,
+      <Link to="/" className="btn btn-primary">Delete</Link>
     ];
   }
 

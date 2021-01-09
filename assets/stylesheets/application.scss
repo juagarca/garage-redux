@@ -129,11 +129,18 @@
 
 .card-car {
   overflow: hidden;
+  position: relative;
   background: white;
   width: 845px;
   margin: 10px 0 0 10px;
   height: 380px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  a {
+    position: absolute;
+    top: 10px;
+    right: 10px
+  }
 }
 
 .card-car > img {
@@ -150,7 +157,7 @@
 }
 
 .card-car p {
-  font-size: 12px;
+  font-size: 13px;
   color: #717171;
   margin-top: 10px;
 }
@@ -172,13 +179,18 @@
   border: 5px solid white;
   border-radius: 50%;
   color: white;
-  right: 11px;
-  bottom: 60px;
-  width: 60px;
-  height: 60px;
+  right: 17px;
+  bottom: 65px;
+  width: 65px;
+  height: 65px;
 }
 
 .plate-border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65.94px;
+  height: 34px;
   border: 1px solid #717171;
-  padding: 3px 4px 3px 4px
+  border-radius: 4px;
 }
