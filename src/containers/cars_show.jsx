@@ -14,19 +14,17 @@ class CarsShow extends Component {
   }
 
   renderCar = (car) => {
-    return (
-      <div className="card-trip">
-        <img src="../../assets/images/car.png" alt="car logo" />
-        <div className="card-trip-infos">
-          <div>
-            <h2>{car.brand}</h2>
-            <p>{car.model}</p>
-          </div>
-          <h2 className="card-trip-pricing">{car.owner}</h2>
-          <span>{car.plate}</span>
+    return [
+      <img src="../../assets/images/car.png" alt="car logo" />,
+      <div className="card-infos">
+        <div>
+          <h2>{car.brand}</h2>
+          <p>{car.model}</p>
         </div>
+        <span className="card-owner">{car.owner}</span>
+        <p>{car.plate}</p>
       </div>
-    );
+    ];
   }
 
   render() {
@@ -37,7 +35,7 @@ class CarsShow extends Component {
       <Sidebar key="sidebar" garageName={this.props.car.garage}>
         <Link to="/" className="btn btn-primary">Back</Link>
       </Sidebar>,
-      <div key={this.props.car.id}>{this.renderCar(this.props.car)}</div>
+      <div className="card-car" key={this.props.car.id}>{this.renderCar(this.props.car)}</div>
     ];
   }
 }
