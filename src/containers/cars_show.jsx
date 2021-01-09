@@ -22,7 +22,7 @@ class CarsShow extends Component {
           <p>{car.model}</p>
         </div>
         <span className="card-owner">{car.owner}</span>
-        <p>{car.plate}</p>
+        <p className="plate-border">{car.plate}</p>
       </div>
     ];
   }
