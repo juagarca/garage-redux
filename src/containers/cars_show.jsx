@@ -28,7 +28,7 @@ class CarsShow extends Component {
         <span className="card-owner">{car.owner}</span>
         <p className="plate-border">{car.plate}</p>
       </div>,
-      <Link to="/" className="btn btn-primary" onClick={this.handleClick}>Delete</Link>
+      <button className="btn btn-primary" onClick={this.handleClick}><span role="img" aria-label="description">❌</span> Delete</button>
     ];
   }
 
