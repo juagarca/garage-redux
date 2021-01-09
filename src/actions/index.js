@@ -46,7 +46,6 @@ export function removeCar(history, car) {
   fetch(url, { method: 'DELETE' })
     .then(response => response.json())
     .then(() => history.push(""));
-
   return {
     type: 'REMOVE_CAR',
     payload: car

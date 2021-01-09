@@ -15,11 +15,11 @@ import CarsIndex from './containers/cars_index';
 import CarsNew from './containers/cars_new';
 import CarsShow from './containers/cars_show';
 
-// const name = prompt("What is your garage?") || `garage${Math.floor(10 + (Math.random() * 90))}`;
+const name = prompt("What is your garage?") || `garage${Math.floor(10 + (Math.random() * 90))}`;
 const reducer = (state = null) => state;
 
 const initialState = {
-  garageName: "test",
+  garageName: name,
   cars: []
 };
 
